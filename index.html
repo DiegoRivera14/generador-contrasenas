@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generador de contraseñas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>🔐 Generador de contraseñas</h1>
+
+    <div class="resultado">
+      <output id="contrasena" class="contrasena" aria-live="polite"></output>
+      <button id="copiar" class="icono" title="Copiar" aria-label="Copiar contraseña">📋</button>
+      <button id="regenerar" class="icono" title="Generar otra" aria-label="Generar otra contraseña">🔄</button>
+    </div>
+
+    <div class="fuerza">
+      <div class="barra"><div id="nivel-fuerza" class="nivel"></div></div>
+      <span id="texto-fuerza"></span>
+    </div>
+
+    <form id="opciones" class="opciones">
+      <label class="longitud">
+        <span>Longitud: <b id="valor-longitud">16</b></span>
+        <input type="range" id="longitud" min="6" max="64" value="16">
+      </label>
+
+      <label class="opcion"><input type="checkbox" id="mayusculas" checked> Mayúsculas (A-Z)</label>
+      <label class="opcion"><input type="checkbox" id="minusculas" checked> Minúsculas (a-z)</label>
+      <label class="opcion"><input type="checkbox" id="numeros" checked> Números (0-9)</label>
+      <label class="opcion"><input type="checkbox" id="simbolos"> Símbolos (!@#$...)</label>
+      <label class="opcion"><input type="checkbox" id="sin-ambiguos"> Evitar caracteres parecidos (0/O, 1/l/I)</label>
+    </form>
+
+    <p id="aviso" class="aviso" role="status"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
